@@ -1,0 +1,22 @@
+$primary-color: #272727;
+$secondary-color: #00FFAB;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*For slow icon color change*/
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+/*For further coloring. This function keeps text color always visible*/
+@function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
